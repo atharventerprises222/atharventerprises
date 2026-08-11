@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atharv Enterprises - Irrigation products, farming advice and contract farming solutions.">
+  <title>Atharv Enterprises | Agriculture & Irrigation Solutions</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #26352a;
+      background: #f7faf7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid #e2e9e3;
+      box-shadow: 0 2px 14px rgba(0,0,0,.06);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #166534;
+      letter-spacing: .3px;
+    }
+    .logo span { color: #d97706; }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      font-weight: 600;
+      color: #34443a;
+      transition: .2s;
+    }
+    nav a:hover { color: #15803d; }
+
+    /* Hero */
+    .hero {
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(rgba(10,55,25,.68), rgba(10,55,25,.68)),
+        url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+    .hero-content { max-width: 800px; padding: 80px 0; }
+    .tag {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 30px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      background: rgba(255,255,255,.10);
+    }
+    .hero h1 { font-size: clamp(40px, 6vw, 70px); line-height: 1.05; margin-bottom: 20px; }
+    .hero p { font-size: 19px; opacity: .94; margin-bottom: 30px; }
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 8px;
+      font-weight: 700;
+      margin: 5px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.18); }
+    .btn-primary { background: #f59e0b; color: #17220f; }
+    .btn-light { background: white; color: #166534; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .section-head { text-align: center; max-width: 760px; margin: 0 auto 42px; }
+    .section-head .eyebrow {
+      color: #15803d;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      margin-bottom: 8px;
+    }
+    .section-head h2 { font-size: 36px; color: #173d24; margin-bottom: 12px; }
+    .section-head p { color: #647268; }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .about-image {
+      min-height: 380px;
+      border-radius: 18px;
+      background: url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1000&q=85") center/cover;
+      box-shadow: 0 18px 45px rgba(22,101,52,.14);
+    }
+    .about-text h3 { font-size: 30px; margin-bottom: 15px; color: #173d24; }
+    .about-text p { margin-bottom: 15px; color: #5d6a61; }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e3ebe4;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 25px rgba(24,55,33,.06);
+      transition: .25s;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(24,55,33,.11); }
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #e8f5eb;
+      font-size: 27px;
+      margin-bottom: 17px;
+    }
+    .card h3 { color: #174d29; margin-bottom: 8px; }
+    .card p { color: #66736a; font-size: 15px; }
+
+    /* Brand strip */
+    .brands {
+      background: #173d24;
+      color: white;
+    }
+    .brand-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .brand {
+      text-align: center;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+    }
+    .brand strong { font-size: 24px; display: block; margin-bottom: 5px; }
+    .brand small { opacity: .8; }
+
+    /* Farming */
+    .farming {
+      background: #eef7ef;
+    }
+    .farming-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .farm-photo {
+      min-height: 430px;
+      border-radius: 18px;
+      background: url("https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?auto=format&fit=crop&w=1000&q=85") center/cover;
+    }
+    .steps { display: grid; gap: 15px; }
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 15px;
+      align-items: start;
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid #dfebe1;
+    }
+    .number {
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: #15803d;
+      color: white;
+      font-weight: 800;
+    }
+    .step h3 { color: #1c4d2b; font-size: 18px; }
+    .step p { color: #66736a; font-size: 14px; }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 25px;
+    }
+    .contact-box, form {
+      background: white;
+      border: 1px solid #e2e9e3;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(24,55,33,.06);
+    }
+    .contact-item { margin: 20px 0; }
+    .contact-item strong { display: block; color: #174d29; margin-bottom: 4px; }
+    .contact-item span { color: #647268; }
+    form { display: grid; gap: 15px; }
+    label { font-size: 14px; font-weight: 700; color: #334239; }
+    input, textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #cfdad1;
+      border-radius: 8px;
+      font: inherit;
+      margin-top: 6px;
+      outline: none;
+    }
+    input:focus, textarea:focus { border-color: #15803d; }
+    textarea { min-height: 130px; resize: vertical; }
+    button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      background: #15803d;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      background: #102b19;
+      color: #d8e4da;
+      padding: 35px 0;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: center;
+    }
+    footer strong { color: white; font-size: 20px; }
+    footer p { font-size: 14px; margin-top: 6px; opacity: .8; }
+
+
+
+    /* Irrigation details */
+    .irrigation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .irrigation-card {
+      background: white;
+      border: 1px solid #dfe8e1;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 9px 28px rgba(24,55,33,.06);
+      transition: .25s;
+    }
+    .irrigation-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px rgba(24,55,33,.10);
+    }
+    .irrigation-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      background: #e8f5eb;
+      border-radius: 14px;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .irrigation-card h3 {
+      color: #174d29;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+    .irrigation-card p {
+      color: #647268;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .irrigation-card ul {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+    }
+    .irrigation-card li {
+      color: #4f5e54;
+      font-size: 13px;
+      padding-left: 18px;
+      position: relative;
+    }
+    .irrigation-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #15803d;
+      font-weight: 800;
+    }
+
+    /* Detailed company cards */
+    .company-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .company-card {
+      background: white;
+      border: 1px solid #dfe8e1;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(24,55,33,.07);
+    }
+    .company-top {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .company-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #e8f5eb;
+      color: #166534;
+      font-size: 29px;
+      font-weight: 900;
+    }
+    .company-card h3 {
+      color: #174d29;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .company-card .company-top span {
+      color: #778279;
+      font-size: 13px;
+    }
+    .company-card p {
+      color: #5f6d63;
+      font-size: 15px;
+      margin: 12px 0;
+    }
+    .product-tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .product-tags span {
+      background: #edf7ef;
+      color: #176534;
+      border-radius: 20px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .service-note {
+      margin-top: 24px;
+      background: #173d24;
+      color: #e8f1ea;
+      border-radius: 14px;
+      padding: 20px 24px;
+      font-size: 14px;
+    }
+    .proprietor-note {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 22px;
+      align-items: start;
+      background: white;
+      border: 1px solid #dfe8e1;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(24,55,33,.06);
+    }
+    .note-mark {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #e8f5eb;
+      color: #15803d;
+      font-size: 45px;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .shop-details {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    .shop-detail {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: #eef7ef;
+      border: 1px solid #dfe9e1;
+      border-radius: 13px;
+      padding: 16px;
+    }
+    .shop-detail > span { font-size: 25px; }
+    .shop-detail strong {
+      display: block;
+      color: #174d29;
+      font-size: 14px;
+    }
+    .shop-detail small {
+      color: #68756c;
+      font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .nav { flex-direction: column; padding: 17px 0; }
+      nav ul { gap: 12px; font-size: 14px; }
+      .about-grid, .farming-grid, .contact-wrap { grid-template-columns: 1fr; }
+      .cards, .brand-list, .company-details, .shop-details, .irrigation-grid { grid-template-columns: 1fr; }
+      .proprietor-note { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+      .hero { min-height: 520px; }
+      .footer-grid { flex-direction: column; text-align: center; }
+    }
+  </style>
+
+
+
+
+<style>
+.language-switcher{display:flex;gap:5px;margin-left:auto;margin-right:12px}
+.lang-btn{padding:7px 11px;border:1px solid #cfdad1;border-radius:7px;background:white;color:#34443a;cursor:pointer;font-size:12px;font-weight:700}
+.lang-btn.active{background:#15803d;color:white;border-color:#15803d}
+@media(max-width:800px){.language-switcher{margin:0}}
+</style>
+<style>
+html[lang="hi"] body {
+  font-family: "Noto Sans Devanagari", "Nirmala UI", "Mangal", Arial, sans-serif;
+}
+html[lang="hi"] .proprietor-note p {
+  line-height: 1.8;
+}
+</style>
+
+<style>
+.enquiry-delivery-note{
+  margin:14px 0 0;
+  padding:12px 14px;
+  border-radius:10px;
+  background:#eef8f0;
+  border:1px solid #d5e9d8;
+  color:#31513a;
+  font-size:13px;
+}
+.enquiry-delivery-note a{color:#15803d;font-weight:700}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">Atharv <span>Enterprises</span></a>
+    <nav>
+      <div class="language-switcher">
+        <button type="button" class="lang-btn active" id="lang-en" onclick="setLanguage('en')">English</button>
+        <button type="button" class="lang-btn" id="lang-hi" onclick="setLanguage('hi')">हिन्दी</button>
+      </div>
+      <ul>
+        <li><a href="#home" data-en="Home" data-hi="होम">Home</a></li>
+        <li><a href="#about" data-en="About" data-hi="हमारे बारे में">About</a></li>
+        <li><a href="#products" data-en="Products" data-hi="उत्पाद">Products</a></li>
+        <li><a href="#irrigation-details" data-en="Irrigation" data-hi="सिंचाई">Irrigation</a></li>
+        <li><a href="#farming" data-en="Contract Farming" data-hi="अनुबंध खेती">Contract Farming</a></li>
+        <li><a href="#contact" data-en="Contact" data-hi="संपर्क करें">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <span class="tag">Agriculture • Irrigation • Farming Solutions</span>
+      <h1>Smart Farming for a Better Future</h1>
+      <p>
+        Welcome to Atharv Enterprises. We provide irrigation products,
+        farming advice and agricultural solutions to help farmers grow better.
+      </p>
+      <a class="btn btn-primary" href="#products">Explore Products</a>
+      <a class="btn btn-light" href="#contact">Contact Us</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image" aria-label="Agricultural field"></div>
+        <div class="about-text">
+          <div class="section-head" style="text-align:left;margin:0 0 20px;">
+            <div class="eyebrow">About Us</div>
+            <h2>A trusted partner for modern farming</h2>
+          </div>
+          <h3>Welcome to Atharv Enterprises</h3>
+          <p><strong>Proprietor – Mr. Anil Kumar Patidar, In front of Krishi Upaj Mandi, Shajapur</strong></p>
+          <p>
+            Atharv Enterprises is an agriculture-focused business serving farmers
+            with irrigation products, farming guidance and agricultural solutions.
+            Our goal is to help farmers adopt practical and efficient technologies
+            for better crop management and responsible use of water and farm inputs.
+          </p>
+          <p>
+            We provide irrigation products and support farming requirements, and
+            our business information includes dealership/association with
+            Netafim, Signet and McCain-related agricultural activities.
+          </p>
+        </div>
+      </div>
+
+      <div class="proprietor-note" style="margin-top:45px;">
+        <div class="note-mark">“</div>
+        <div>
+          <div class="eyebrow" data-en="A Note From The Proprietor" data-hi="प्रोपराइटर की ओर से संदेश">A Note From The Proprietor</div>
+          <h3 style="color:#173d24;font-size:28px;margin-bottom:10px;">
+            <span data-en="Mr. Anil Kumar Patidar" data-hi="श्री अनिल कुमार पाटीदार">Mr. Anil Kumar Patidar</span>
+          </h3>
+          <p style="color:#5d6a61;font-size:17px;">
+            <span data-en="“At Atharv Enterprises, our aim is to support farmers with reliable irrigation products, practical farming advice and modern agricultural solutions. We believe that every farmer deserves access to good technology and useful guidance. We are committed to serving our customers honestly, understanding their farming needs and helping them choose suitable solutions for their fields.”" data-hi="“अथर्व एंटरप्राइजेज में हमारा उद्देश्य किसानों को विश्वसनीय सिंचाई उत्पाद, व्यावहारिक कृषि मार्गदर्शन और आधुनिक कृषि समाधान उपलब्ध कराना है। हमारा मानना है कि प्रत्येक किसान को अच्छी तकनीक और उपयोगी मार्गदर्शन तक पहुँच मिलनी चाहिए। हम अपने ग्राहकों की कृषि आवश्यकताओं को समझते हुए ईमानदारी से उनकी सेवा करने और उनके खेतों के लिए उपयुक्त समाधान चुनने में सहायता करने के लिए प्रतिबद्ध हैं।”">“At Atharv Enterprises, our aim is to support farmers with reliable irrigation products, practical farming advice and modern agricultural solutions. We believe that every farmer deserves access to good technology and useful guidance. We are committed to serving our customers honestly, understanding their farming needs and helping them choose suitable solutions for their fields.”</span>
+          </p>
+          <p style="margin-top:12px;color:#174d29;font-weight:700;">
+            <span data-en="— Mr. Anil Kumar Patidar, Proprietor, Atharv Enterprises, In front of Krishi Upaj Mandi, Shajapur" data-hi="— श्री अनिल कुमार पाटीदार, प्रोपराइटर, अथर्व एंटरप्राइजेज, कृषि उपज मंडी के सामने, शाजापुर">— Mr. Anil Kumar Patidar, Proprietor, Atharv Enterprises, In front of Krishi Upaj Mandi, Shajapur</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="shop-details" style="margin-top:28px;">
+        <div class="shop-detail">
+          <span>🏪</span>
+          <div><strong>Shop Name</strong><small>Atharv Enterprises</small></div>
+        </div>
+        <div class="shop-detail">
+          <span>👨‍🌾</span>
+          <div><strong>Proprietor</strong><small>Mr. Anil Kumar Patidar</small></div>
+        </div>
+        <div class="shop-detail">
+          <span>📍</span>
+          <div><strong>Location</strong><small>In front of Krishi Upaj Mandi, Shajapur</small></div>
+        </div>
+        <div class="shop-detail">
+          <span>🌾</span>
+          <div><strong>Business</strong><small>Irrigation • Contract Farming</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" style="background:#f0f5f1;">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Our Products & Partners</div>
+        <h2>Detailed Agricultural Solutions</h2>
+        <p>
+          Learn more about the major brands and agricultural activities
+          represented on our website.
+        </p>
+      </div>
+
+      <div class="company-details">
+        <article class="company-card">
+          <div class="company-top">
+            <div class="company-logo">N</div>
+            <div>
+              <h3>Netafim</h3>
+              <span>Precision Irrigation & Smart Farming</span>
+            </div>
+          </div>
+          <p>
+            Netafim is a global precision-irrigation company founded in 1965
+            in Israel. It pioneered modern drip irrigation and focuses on
+            helping growers use water and other resources more efficiently.
+            Its solutions cover agriculture from the water source to the
+            plant root zone.
+          </p>
+          <p>
+            Its product portfolio includes <strong>drippers and driplines,
+            sprinklers and micro-sprinklers, filters, valves, pipes,
+            connectors and accessories, water meters, water tanks and
+            digital farming solutions</strong>. Netafim also provides
+            crop-specific agronomic knowledge and smart irrigation tools.
+          </p>
+          <div class="product-tags">
+            <span>Drip Irrigation</span><span>Sprinklers</span><span>Filters</span>
+            <span>Fertigation</span><span>Digital Farming</span>
+          </div>
+        </article>
+
+        <article class="company-card">
+          <div class="company-top">
+            <div class="company-logo">S</div>
+            <div>
+              <h3>Signet Industries</h3>
+              <span>Micro-Irrigation, Pipes & Irrigation Products</span>
+            </div>
+          </div>
+          <p>
+            Signet Industries Ltd. is an Indian company associated with
+            polymer products and agricultural irrigation solutions. Its
+            irrigation business includes systems and equipment used for
+            efficient water application in agriculture.
+          </p>
+          <p>
+            Its irrigation offering includes <strong>drip and sprinkler
+            irrigation systems, pipes, fittings and related agricultural
+            products</strong>. Signet's irrigation solutions are used across
+            different crops and farming applications, with technical and
+            design support for field requirements.
+          </p>
+          <div class="product-tags">
+            <span>Drip Systems</span><span>Sprinklers</span><span>Pipes</span>
+            <span>Fittings</span>
+          </div>
+        </article>
+
+        <article class="company-card">
+          <div class="company-top">
+            <div class="company-logo">M</div>
+            <div>
+              <h3>McCain Foods</h3>
+              <span>Potato Processing & Contract Farming</span>
+            </div>
+          </div>
+          <p>
+            McCain Foods is a global producer of frozen French fries and
+            potato products. McCain Foods (India) is a wholly owned
+            subsidiary of McCain Foods Limited and has been involved in
+            agriculture research and development and the frozen-food market
+            in India since 1998.
+          </p>
+          <p>
+            McCain works with local farmers and focuses on smart and
+            sustainable potato farming. Its agricultural work includes
+            improving water-use efficiency, optimizing fertilizer use and
+            encouraging better farming practices. Potatoes that meet the
+            required quality and processing characteristics can be supplied
+            into the processing chain.
+          </p>
+          <div class="product-tags">
+            <span>Potato Farming</span><span>Contract Farming</span>
+            <span>Sustainable Farming</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="service-note">
+        <strong>Our role:</strong> Atharv Enterprises aims to connect farmers
+        with suitable irrigation products, agricultural guidance and relevant
+        farming opportunities. For exact product specifications, current
+        prices, dealership terms or contract-farming conditions, customers
+        should confirm the latest terms with the respective company and
+        Atharv Enterprises.
+      </div>
+    </div>
+  </section>
+
+
+  <section id="irrigation-details">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Irrigation Products</div>
+        <h2>Drip, Sprinkler & Irrigation Equipment</h2>
+        <p>
+          Atharv Enterprises provides irrigation solutions and equipment for
+          different crops and field requirements, with a focus on efficient
+          water application and reliable farm irrigation.
+        </p>
+      </div>
+
+      <div class="irrigation-grid">
+        <article class="irrigation-card">
+          <div class="irrigation-icon">💧</div>
+          <h3>Drip Irrigation System</h3>
+          <p>
+            Drip irrigation delivers water slowly and directly near the root
+            zone of plants. It is suitable for vegetables, orchards, cotton,
+            sugarcane, chilli, fruits and many other crops.
+          </p>
+          <ul>
+            <li>Drip laterals and drippers</li>
+            <li>Main lines and sub-main pipes</li>
+            <li>Filters and pressure-control equipment</li>
+            <li>Connectors, valves and fittings</li>
+            <li>Fertigation support</li>
+          </ul>
+        </article>
+
+        <article class="irrigation-card">
+          <div class="irrigation-icon">🌧️</div>
+          <h3>Sprinkler Irrigation System</h3>
+          <p>
+            Sprinkler irrigation distributes water over the field in the form
+            of droplets, similar to rainfall. It can be useful for field
+            crops, vegetables, nurseries and other suitable agricultural
+            applications.
+          </p>
+          <ul>
+            <li>Sprinklers and micro-sprinklers</li>
+            <li>Risers and sprinkler stands</li>
+            <li>HDPE/PVC and other irrigation pipes</li>
+            <li>Valves and connectors</li>
+            <li>Pressure and flow management</li>
+          </ul>
+        </article>
+
+        <article class="irrigation-card">
+          <div class="irrigation-icon">⚙️</div>
+          <h3>Other Irrigation Equipment</h3>
+          <p>
+            We also deal in supporting irrigation components used to install,
+            operate and maintain irrigation systems according to field needs.
+          </p>
+          <ul>
+            <li>Screen, disc and other irrigation filters</li>
+            <li>Control valves and non-return valves</li>
+            <li>Pipe fittings, elbows, tees and connectors</li>
+            <li>Pressure regulators and gauges</li>
+            <li>Fertigation and Venturi equipment</li>
+            <li>Water meters and irrigation accessories</li>
+          </ul>
+        </article>
+
+        <article class="irrigation-card">
+          <div class="irrigation-icon">🌱</div>
+          <h3>Fertigation Equipment</h3>
+          <p>
+            Fertigation equipment helps apply dissolved fertilizers through
+            an irrigation system. Proper filtration, pressure and dosage
+            management are important for reliable operation.
+          </p>
+          <ul>
+            <li>Venturi injectors</li>
+            <li>Fertilizer tanks</li>
+            <li>Injection accessories</li>
+            <li>Filters and control components</li>
+          </ul>
+        </article>
+
+        <article class="irrigation-card">
+          <div class="irrigation-icon">🔧</div>
+          <h3>Pipes, Fittings & Accessories</h3>
+          <p>
+            A complete irrigation installation requires suitable pipes,
+            connectors and control accessories. We can help farmers identify
+            components according to their irrigation layout and field
+            requirements.
+          </p>
+          <ul>
+            <li>Mainline and sub-main pipes</li>
+            <li>Take-off connectors and grommets</li>
+            <li>End caps and flushing accessories</li>
+            <li>Clamps, joints and repair fittings</li>
+          </ul>
+        </article>
+
+        <article class="irrigation-card">
+          <div class="irrigation-icon">📐</div>
+          <h3>System Planning & Support</h3>
+          <p>
+            Choosing an irrigation system depends on crop, soil, field size,
+            water source, available pressure and required flow. We help
+            farmers understand the equipment needed for their application.
+          </p>
+          <ul>
+            <li>Crop-wise irrigation guidance</li>
+            <li>Basic system component selection</li>
+            <li>Water-saving irrigation solutions</li>
+            <li>Maintenance and replacement guidance</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="brands">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" style="color:#fbbf24;">Our Brands</div>
+        <h2 style="color:white;">Agricultural Technology Partners</h2>
+        <p style="color:#cbd8ce;">Products and farming solutions from recognised agricultural brands.</p>
+      </div>
+
+      <div class="brand-list">
+        <div class="brand">
+          <strong>Netafim</strong>
+          <small>Precision irrigation solutions</small>
+        </div>
+        <div class="brand">
+          <strong>Signet</strong>
+          <small>Irrigation & agricultural products</small>
+        </div>
+        <div class="brand">
+          <strong>McCain</strong>
+          <small>Processing potato contract farming</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="farming" id="farming">
+    <div class="container">
+      <div class="farming-grid">
+        <div class="farm-photo" aria-label="Potato and agricultural farming"></div>
+
+        <div>
+          <div class="section-head" style="text-align:left;margin:0 0 28px;">
+            <div class="eyebrow">Contract Farming</div>
+            <h2>McCain Potato Contract Farming</h2>
+            <p>
+              McCain works with farmers to grow potatoes suitable for processing
+              into processed potato products.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="number">1</div>
+              <div>
+                <h3>Farmer Selection & Agreement</h3>
+                <p>Farmers participate through arrangements made before the planting season.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="number">2</div>
+              <div>
+                <h3>Suitable Potato Varieties</h3>
+                <p>Potato varieties are selected according to processing and quality requirements.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="number">3</div>
+              <div>
+                <h3>Technical Guidance</h3>
+                <p>Farmers receive guidance on cultivation, irrigation, crop care and harvesting practices.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="number">4</div>
+              <div>
+                <h3>Quality-Based Procurement</h3>
+                <p>Harvested potatoes are assessed for quality and processing suitability before procurement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Why Choose Us</div>
+        <h2>Focused on farmers and efficiency</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🤝</div>
+          <h3>Farmer Support</h3>
+          <p>We aim to make agricultural technology and practical farming guidance accessible to local farmers.</p>
+        </article>
+        <article class="card">
+          <div class="icon">💦</div>
+          <h3>Water Efficiency</h3>
+          <p>Modern irrigation can help deliver water more efficiently to crops and reduce unnecessary water use.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📈</div>
+          <h3>Better Productivity</h3>
+          <p>Good irrigation management and crop practices can support healthier crops and improved farm productivity.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:#f0f5f1;">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Contact Atharv Enterprises</h2>
+        <p>Have a question about irrigation products, farming advice or contract farming? Contact us.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <div class="contact-box">
+          <h3 style="color:#174d29;font-size:25px;">Business Details</h3>
+
+          <div class="contact-item">
+            <strong>Proprietor</strong>
+            <span>Anil Kumar Patidar</span>
+          </div>
+          <div class="contact-item">
+            <strong>Location</strong>
+            <span>In front of Krishi Upaj Mandi, Shajapur</span>
+          </div>
+          <div class="contact-item">
+            <strong>Services</strong>
+            <span>Irrigation • Contract Farming</span>
+          </div>
+          <div class="contact-item">
+            <strong>Brands & Agricultural Activities</strong>
+            <span>Netafim • Signet • McCain • Irrigation • Farming Advice</span>
+          </div>
+          <div class="contact-item">
+            <strong>Shop</strong>
+            <span>Atharv Enterprises, In front of Krishi Upaj Mandi, Shajapur</span>
+          </div>
+          <div class="contact-item">
+            <strong>Contact Number</strong>
+            <span><a href="tel:9754036143" style="color:#15803d;font-weight:700;">9754036143</a></span>
+          </div>
+          <div class="contact-item">
+            <strong>Email</strong>
+            <span><a href="mailto:atharventerprises222@gmail.com" style="color:#15803d;font-weight:700;">atharventerprises222@gmail.com</a></span>
+          </div>
+        </div>
+
+        <form action="https://formsubmit.co/atharventerprises222@gmail.com" method="POST" accept-charset="UTF-8">
+          <input type="hidden" name="_subject" value="New Enquiry - Atharv Enterprises">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting Atharv Enterprises. We have received your enquiry and will contact you soon.">
+
+          <!-- Honeypot spam protection -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"
+                 aria-hidden="true">
+
+          <label>
+            Your Name
+            <input type="text" id="name" name="name" placeholder="Enter your name"
+                   autocomplete="name" minlength="2" maxlength="80" required>
+          </label>
+          <label>
+            Phone Number
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                   autocomplete="tel" inputmode="tel" pattern="[0-9+()\-\s]{7,20}"
+                   minlength="7" maxlength="20" required>
+          </label>
+          <label>
+            Email (Optional)
+            <input type="email" id="email" name="email" placeholder="Enter your email address"
+                   autocomplete="email" maxlength="120">
+          </label>
+          <label>
+            Your Message
+            <textarea id="message" name="message" placeholder="Tell us what you need..."
+                      minlength="5" maxlength="2000" required></textarea>
+          </label>
+          <button type="submit">Send Enquiry</button>
+          <p id="formMessage" style="font-size:14px;color:#15803d;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>Atharv Enterprises</strong>
+      <p>Agriculture & Irrigation Solutions</p>
+    </div>
+    <p>© <span id="year"></span> Atharv Enterprises. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+
+
+
+<script>
+const pageTranslations={"html": "html", "Atharv Enterprises | Agriculture & Irrigation Solutions": "अथर्व एंटरप्राइजेज | कृषि एवं सिंचाई समाधान", "Atharv": " अथर्व ", "Enterprises": "एंटरप्राइजेज", "English": "English", "हिन्दी": "हिन्दी", "Home": "होम", "About": "हमारे बारे में", "Products": "उत्पाद", "Irrigation": "सिंचाई", "Contract Farming": "अनुबंध खेती", "Contact": "संपर्क करें", "Agriculture • Irrigation • Farming Solutions": "कृषि • सिंचाई • खेती समाधान", "Smart Farming for a Better Future": "बेहतर भविष्य के लिए स्मार्ट खेती", "Welcome to Atharv Enterprises. We provide irrigation products, farming advice and agricultural solutions to help farmers grow better.": "अथर्व एंटरप्राइजेज में आपका स्वागत है। हम किसानों को बेहतर खेती में सहायता के लिए सिंचाई उत्पाद, कृषि मार्गदर्शन और कृषि समाधान उपलब्ध कराते हैं।", "Explore Products": "उत्पाद देखें", "Contact Us": "संपर्क करें", "About Us": "हमारे बारे में", "A trusted partner for modern farming": "आधुनिक खेती के लिए एक भरोसेमंद साथी", "Welcome to Atharv Enterprises": "अथर्व एंटरप्राइजेज में आपका स्वागत है", "Proprietor – Mr. Anil Kumar Patidar, In front of Krishi Upaj Mandi, Shajapur": "प्रोपराइटर – श्री अनिल कुमार पाटीदार, कृषि उपज मंडी के सामने, शाजापुर", "Atharv Enterprises is an agriculture-focused business serving farmers with irrigation products, farming guidance and agricultural solutions. Our goal is to help farmers adopt practical and efficient technologies for better crop management and responsible use of water and farm inputs.": "अथर्व एंटरप्राइजेज एक कृषि-केंद्रित व्यवसाय है जो किसानों को सिंचाई उत्पाद, कृषि मार्गदर्शन और कृषि समाधान उपलब्ध कराता है। हमारा उद्देश्य किसानों को बेहतर फसल प्रबंधन तथा पानी और कृषि संसाधनों के जिम्मेदार उपयोग के लिए व्यावहारिक और प्रभावी तकनीक अपनाने में सहायता करना है।", "We provide irrigation products and support farming requirements, and our business information includes dealership/association with Netafim, Signet and McCain-related agricultural activities.": "हम सिंचाई उत्पाद उपलब्ध कराते हैं और किसानों की कृषि आवश्यकताओं में सहायता करते हैं। हमारे व्यवसाय में Netafim, Signet और McCain से संबंधित कृषि गतिविधियां शामिल हैं।", "A Note From The Proprietor": "प्रोपराइटर की ओर से संदेश", "Mr. Anil Kumar Patidar": "श्री अनिल कुमार पाटीदार", "“At Atharv Enterprises, our aim is to support farmers with reliable irrigation products, practical farming advice and modern agricultural solutions. We believe that every farmer deserves access to good technology and useful guidance. We are committed to serving our customers honestly, understanding their farming needs and helping them choose suitable solutions for their fields.”": "“अथर्व एंटरप्राइजेज में हमारा उद्देश्य किसानों को विश्वसनीय सिंचाई उत्पाद, व्यावहारिक कृषि मार्गदर्शन और आधुनिक कृषि समाधान उपलब्ध कराना है। हमारा मानना है कि प्रत्येक किसान को अच्छी तकनीक और उपयोगी मार्गदर्शन मिलना चाहिए। हम अपने ग्राहकों की कृषि आवश्यकताओं को समझते हुए ईमानदारी से उनकी सेवा करने और उनके खेतों के लिए उपयुक्त समाधान चुनने में सहायता करने के लिए प्रतिबद्ध हैं।”", "— Mr. Anil Kumar Patidar, Proprietor, Atharv Enterprises, In front of Krishi Upaj Mandi, Shajapur": "— श्री अनिल कुमार पाटीदार, प्रोपराइटर, अथर्व एंटरप्राइजेज, कृषि उपज मंडी के सामने, शाजापुर", "Shop Name": "दुकान का नाम", "Proprietor": "प्रोपराइटर", "Location": "स्थान", "Business": "व्यवसाय", "In front of Krishi Upaj Mandi, Shajapur": "कृषि उपज मंडी के सामने, शाजापुर", "Irrigation • Contract Farming": "सिंचाई • अनुबंध खेती", "Our Products & Partners": "हमारे उत्पाद और साझेदार", "Detailed Agricultural Solutions": "विस्तृत कृषि समाधान", "Learn more about the major brands and agricultural activities represented on our website.": "हमारी वेबसाइट पर उपलब्ध प्रमुख ब्रांडों और कृषि गतिविधियों के बारे में अधिक जानें।", "Netafim": "नेटाफिम", "Precision Irrigation & Smart Farming": "प्रिसीजन सिंचाई एवं स्मार्ट खेती", "Netafim is a global precision-irrigation company founded in 1965 in Israel. It pioneered modern drip irrigation and focuses on helping growers use water and other resources more efficiently. Its solutions cover agriculture from the water source to the plant root zone.": "Netafim एक वैश्विक प्रिसीजन-सिंचाई कंपनी है, जिसकी स्थापना 1965 में इज़राइल में हुई थी। इसने आधुनिक ड्रिप सिंचाई को विकसित करने में अग्रणी भूमिका निभाई और किसानों को पानी तथा अन्य संसाधनों का अधिक कुशल उपयोग करने में सहायता करने पर ध्यान दिया। इसके समाधान जल स्रोत से लेकर पौधों के जड़ क्षेत्र तक कृषि आवश्यकताओं को कवर करते हैं।", "Its product portfolio includes": "इसके उत्पादों में शामिल हैं", "drippers and driplines, sprinklers and micro-sprinklers, filters, valves, pipes, connectors and accessories, water meters, water tanks and digital farming solutions": "ड्रिपर और ड्रिपलाइन, स्प्रिंकलर और माइक्रो-स्प्रिंकलर, फिल्टर, वाल्व, पाइप, कनेक्टर और सहायक उपकरण, जल मीटर, पानी की टंकियां तथा डिजिटल खेती के समाधान", "Netafim also provides crop-specific agronomic knowledge and smart irrigation tools.": "Netafim फसल-विशिष्ट कृषि ज्ञान और स्मार्ट सिंचाई उपकरण भी उपलब्ध कराता है।", "Drip Irrigation": "ड्रिप सिंचाई", "Sprinklers": "स्प्रिंकलर", "Filters": "फिल्टर", "Fertigation": "फर्टिगेशन", "Digital Farming": "डिजिटल खेती", "Signet Industries": "सिग्नेट इंडस्ट्रीज", "Micro-Irrigation, Pipes & Irrigation Products": "माइक्रो-सिंचाई, पाइप और सिंचाई उत्पाद", "Signet Industries Ltd. is an Indian company associated with polymer products and agricultural irrigation solutions. Its irrigation business includes systems and equipment used for efficient water application in agriculture.": "Signet Industries Ltd. एक भारतीय कंपनी है जो पॉलिमर उत्पादों और कृषि सिंचाई समाधानों से जुड़ी है। इसका सिंचाई व्यवसाय कृषि में पानी के कुशल उपयोग के लिए आवश्यक प्रणालियों और उपकरणों से संबंधित है।", "Its irrigation offering includes": "इसके सिंचाई उत्पादों में शामिल हैं", "drip and sprinkler irrigation systems, pipes, fittings and related irrigation products": "ड्रिप और स्प्रिंकलर सिंचाई प्रणालियां, पाइप, फिटिंग और संबंधित सिंचाई उत्पाद", "Signet's irrigation solutions are used across different crops and farming applications, with technical and design support for field requirements.": "सिग्नेट की सिंचाई प्रणालियों का उपयोग विभिन्न फसलों और कृषि कार्यों में किया जाता है तथा खेत की आवश्यकताओं के अनुसार तकनीकी और डिजाइन सहायता भी उपलब्ध होती है।", "Drip Systems": "ड्रिप सिस्टम", "Pipes": "पाइप", "Fittings": "फिटिंग", "McCain Foods": "मैक्केन फूड्स", "Potato Processing & Contract Farming": "आलू प्रसंस्करण एवं अनुबंध खेती", "McCain Foods is a global producer of frozen potato products. McCain Foods (India) is a wholly owned subsidiary of McCain Foods Limited and has been involved in agriculture research and development and the frozen-food market in India since 1998.": "McCain Foods जमे हुए आलू उत्पादों की एक वैश्विक निर्माता कंपनी है। McCain Foods (India), McCain Foods Limited की पूर्ण स्वामित्व वाली सहायक कंपनी है और 1998 से भारत में कृषि अनुसंधान एवं विकास तथा फ्रोजन-फूड बाजार से जुड़ी हुई है।", "McCain works with local farmers and focuses on smart and sustainable potato farming. Its agricultural work includes improving water-use efficiency, optimizing fertilizer use and encouraging better farming practices. Potatoes that meet the required quality and processing characteristics can be supplied into the processing chain.": "McCain स्थानीय किसानों के साथ काम करती है और स्मार्ट तथा टिकाऊ आलू खेती पर ध्यान देती है। इसकी कृषि गतिविधियों में पानी के कुशल उपयोग में सुधार, उर्वरक के बेहतर उपयोग और अच्छी कृषि पद्धतियों को बढ़ावा देना शामिल है। आवश्यक गुणवत्ता और प्रसंस्करण मानकों को पूरा करने वाले आलू प्रसंस्करण श्रृंखला में भेजे जा सकते हैं।", "Potato Farming": "आलू खेती", "Sustainable Farming": "टिकाऊ खेती", "Our role:": "हमारी भूमिका:", "Atharv Enterprises aims to connect farmers with suitable irrigation products, agricultural guidance and relevant farming opportunities. For exact product specifications, current prices, dealership terms or contract-farming conditions, customers should confirm the latest terms with the respective company and Atharv Enterprises.": "अथर्व एंटरप्राइजेज का उद्देश्य किसानों को उपयुक्त सिंचाई उत्पाद, कृषि मार्गदर्शन और संबंधित खेती के अवसरों से जोड़ना है। उत्पाद की सटीक जानकारी, वर्तमान कीमत, डीलरशिप की शर्तों या अनुबंध खेती की शर्तों के लिए ग्राहक संबंधित कंपनी और अथर्व एंटरप्राइजेज से नवीनतम जानकारी की पुष्टि करें।", "Irrigation Products": "सिंचाई उत्पाद", "Drip, Sprinkler & Irrigation Equipment": "ड्रिप, स्प्रिंकलर एवं सिंचाई उपकरण", "Atharv Enterprises provides irrigation solutions and equipment for different crops and field requirements, with a focus on efficient water application and reliable farm irrigation.": "अथर्व एंटरप्राइजेज विभिन्न फसलों और खेत की आवश्यकताओं के लिए सिंचाई समाधान और उपकरण उपलब्ध कराता है, जिसमें पानी के कुशल उपयोग और विश्वसनीय खेत सिंचाई पर विशेष ध्यान दिया जाता है।", "Drip Irrigation System": "ड्रिप सिंचाई प्रणाली", "Drip irrigation delivers water slowly and directly near the root zone of plants. It is suitable for vegetables, orchards, cotton, sugarcane, chilli, fruits and many other crops.": "ड्रिप सिंचाई में पानी धीरे-धीरे और सीधे पौधों के जड़ क्षेत्र के पास पहुंचाया जाता है। यह सब्जियों, बागों, कपास, गन्ना, मिर्च, फलों और कई अन्य फसलों के लिए उपयुक्त है।", "Drip laterals and drippers": "ड्रिप लेटरल और ड्रिपर", "Main lines and sub-main pipes": "मुख्य पाइपलाइन और सब-मेन पाइप", "Filters and pressure-control equipment": "फिल्टर और दबाव नियंत्रण उपकरण", "Connectors, valves and fittings": "कनेक्टर, वाल्व और फिटिंग", "Fertigation support": "फर्टिगेशन सहायता", "Sprinkler Irrigation System": "स्प्रिंकलर सिंचाई प्रणाली", "Sprinkler irrigation distributes water over the field in the form of droplets, similar to rainfall. It can be useful for field crops, vegetables, nurseries and other suitable agricultural applications.": "स्प्रिंकलर सिंचाई में पानी की बूंदों के रूप में खेत में वितरण किया जाता है, जो वर्षा के समान होता है। यह खेत की फसलों, सब्जियों, नर्सरी और अन्य उपयुक्त कृषि कार्यों के लिए उपयोगी हो सकती है।", "Sprinklers and micro-sprinklers": "स्प्रिंकलर और माइक्रो-स्प्रिंकलर", "Risers and sprinkler stands": "राइजर और स्प्रिंकलर स्टैंड", "HDPE/PVC and other irrigation pipes": "HDPE/PVC और अन्य सिंचाई पाइप", "Valves and connectors": "वाल्व और कनेक्टर", "Pressure and flow management": "दबाव और जल प्रवाह प्रबंधन", "Other Irrigation Equipment": "अन्य सिंचाई उपकरण", "We also deal in supporting irrigation components used to install, operate and maintain irrigation systems according to field needs.": "हम खेत की आवश्यकताओं के अनुसार सिंचाई प्रणालियों की स्थापना, संचालन और रखरखाव में उपयोग होने वाले सहायक सिंचाई उपकरण भी उपलब्ध कराते हैं।", "Screen, disc and other irrigation filters": "स्क्रीन, डिस्क और अन्य सिंचाई फिल्टर", "Control valves and non-return valves": "कंट्रोल वाल्व और नॉन-रिटर्न वाल्व", "Pipe fittings, elbows, tees and connectors": "पाइप फिटिंग, एल्बो, टी और कनेक्टर", "Pressure regulators and gauges": "प्रेशर रेगुलेटर और गेज", "Fertigation and Venturi equipment": "फर्टिगेशन और वेंचुरी उपकरण", "Water meters and irrigation accessories": "जल मीटर और सिंचाई सहायक उपकरण", "Fertigation Equipment": "फर्टिगेशन उपकरण", "Fertigation equipment helps apply dissolved fertilizers through an irrigation system. Proper filtration, pressure and dosage management are important for reliable operation.": "फर्टिगेशन उपकरण सिंचाई प्रणाली के माध्यम से घुले हुए उर्वरकों को पौधों तक पहुंचाने में सहायता करते हैं। विश्वसनीय संचालन के लिए उचित फिल्ट्रेशन, दबाव और मात्रा का प्रबंधन आवश्यक है।", "Venturi injectors": "वेंचुरी इंजेक्टर", "Fertilizer tanks": "उर्वरक टैंक", "Injection accessories": "इंजेक्शन सहायक उपकरण", "Filters and control components": "फिल्टर और नियंत्रण उपकरण", "Pipes, Fittings & Accessories": "पाइप, फिटिंग और सहायक उपकरण", "A complete irrigation installation requires suitable pipes, connectors and control accessories. We can help farmers identify components according to their irrigation layout and field requirements.": "एक पूर्ण सिंचाई स्थापना के लिए उपयुक्त पाइप, कनेक्टर और नियंत्रण सहायक उपकरण आवश्यक होते हैं। हम किसानों को उनकी सिंचाई संरचना और खेत की आवश्यकताओं के अनुसार सही उपकरण पहचानने में सहायता कर सकते हैं।", "Mainline and sub-main pipes": "मेनलाइन और सब-मेन पाइप", "Take-off connectors and grommets": "टेक-ऑफ कनेक्टर और ग्रोमेट", "End caps and flushing accessories": "एंड कैप और फ्लशिंग सहायक उपकरण", "Clamps, joints and repair fittings": "क्लैंप, जोड़ और मरम्मत फिटिंग", "System Planning & Support": "सिस्टम योजना और सहायता", "Choosing an irrigation system depends on crop, soil, field size, water source, available pressure and required flow. We help farmers understand the equipment needed for their application.": "सिंचाई प्रणाली का चयन फसल, मिट्टी, खेत के आकार, जल स्रोत, उपलब्ध दबाव और आवश्यक जल प्रवाह पर निर्भर करता है। हम किसानों को उनकी आवश्यकता के अनुसार जरूरी उपकरण समझने में सहायता करते हैं।", "Crop-wise irrigation guidance": "फसल के अनुसार सिंचाई मार्गदर्शन", "Basic system component selection": "सिस्टम के मूल घटकों का चयन", "Water-saving irrigation solutions": "जल बचत वाली सिंचाई प्रणालियां", "Maintenance and replacement guidance": "रखरखाव और बदलने का मार्गदर्शन", "Our Brands": "हमारे ब्रांड", "Agricultural Technology Partners": "कृषि तकनीक साझेदार", "Products and farming solutions from recognised agricultural brands.": "प्रमुख कृषि ब्रांडों के उत्पाद और खेती समाधान।", "Precision irrigation solutions": "प्रिसीजन सिंचाई समाधान", "Signet": "सिग्नेट", "Irrigation & agricultural products": "सिंचाई और कृषि उत्पाद", "McCain": "मैक्केन", "Processing potato contract farming": "प्रसंस्करण के लिए आलू अनुबंध खेती", "McCain Potato Contract Farming": "मैक्केन आलू अनुबंध खेती", "McCain works with farmers to grow potatoes suitable for processing into processed potato products.": "McCain किसानों के साथ मिलकर ऐसे आलू उगाने में सहायता करती है जो प्रसंस्कृत आलू उत्पादों के लिए उपयुक्त हों।", "Farmer Selection & Agreement": "किसान चयन और समझौता", "Farmers participate through arrangements made before the planting season.": "किसान बुवाई के मौसम से पहले किए गए समझौतों के माध्यम से इसमें भाग लेते हैं।", "Suitable Potato Varieties": "उपयुक्त आलू की किस्में", "Potato varieties are selected according to processing and quality requirements.": "आलू की किस्मों का चयन प्रसंस्करण और गुणवत्ता की आवश्यकताओं के अनुसार किया जाता है।", "Technical Guidance": "तकनीकी मार्गदर्शन", "Farmers receive guidance on cultivation, irrigation, crop care and harvesting practices.": "किसानों को खेती, सिंचाई, फसल देखभाल और कटाई की प्रक्रियाओं के बारे में मार्गदर्शन दिया जाता है।", "Quality-Based Procurement": "गुणवत्ता के आधार पर खरीद", "Harvested potatoes are assessed for quality and processing suitability before procurement.": "खरीद से पहले तैयार आलू की गुणवत्ता और प्रसंस्करण के लिए उपयुक्तता का मूल्यांकन किया जाता है।", "Why Choose Us": "हमें क्यों चुनें", "Focused on farmers and efficiency": "किसानों और दक्षता पर ध्यान", "Farmer Support": "किसान सहायता", "We aim to make agricultural technology and practical farming guidance accessible to local farmers.": "हमारा उद्देश्य स्थानीय किसानों के लिए कृषि तकनीक और व्यावहारिक कृषि मार्गदर्शन को आसानी से उपलब्ध कराना है।", "Water Efficiency": "जल दक्षता", "Modern irrigation can help deliver water more efficiently to crops and reduce unnecessary water use.": "आधुनिक सिंचाई फसलों तक पानी को अधिक कुशलता से पहुंचाने और अनावश्यक जल उपयोग को कम करने में सहायता कर सकती है।", "Better Productivity": "बेहतर उत्पादकता", "Good irrigation management and crop practices can support healthier crops and improved farm productivity.": "अच्छा सिंचाई प्रबंधन और बेहतर फसल पद्धतियां स्वस्थ फसल और बेहतर कृषि उत्पादकता में सहायता कर सकती हैं।", "Get In Touch": "संपर्क करें", "Contact Atharv Enterprises": "अथर्व एंटरप्राइजेज से संपर्क करें", "Have a question about irrigation products, farming advice or contract farming? Contact us.": "सिंचाई उत्पाद, कृषि मार्गदर्शन या अनुबंध खेती के बारे में कोई जानकारी चाहिए? हमसे संपर्क करें।", "Business Details": "व्यवसाय विवरण", "Anil Kumar Patidar": "अनिल कुमार पाटीदार", "Services": "सेवाएं", "Brands & Agricultural Activities": "ब्रांड और कृषि गतिविधियां", "Netafim • Signet • McCain • Irrigation • Farming Advice": "Netafim • Signet • McCain • सिंचाई • कृषि मार्गदर्शन", "Shop": "दुकान", "Atharv Enterprises, In front of Krishi Upaj Mandi, Shajapur": "अथर्व एंटरप्राइजेज, कृषि उपज मंडी के सामने, शाजापुर", "Contact Number": "संपर्क नंबर", "Email": "ईमेल", "Email (Optional)": "ईमेल (वैकल्पिक)", "Your Name": "आपका नाम", "Phone Number": "फोन नंबर", "Your Message": "आपका संदेश", "Send Enquiry": "पूछताछ भेजें", "Agriculture & Irrigation Solutions": "कृषि एवं सिंचाई समाधान", "Atharv Enterprises. All rights reserved.": "अथर्व एंटरप्राइजेज। सर्वाधिकार सुरक्षित।"};
+
+const originalTexts = new WeakMap();
+
+function getTextNodes() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || ['SCRIPT','STYLE','NOSCRIPT'].includes(parent.tagName)) continue;
+    if (!node.nodeValue.trim()) continue;
+    // Text inside explicit bilingual elements is handled by their data-en/data-hi values.
+    if (parent.closest('[data-en][data-hi]')) continue;
+    nodes.push(node);
+  }
+  return nodes;
+}
+
+function setLanguage(lang) {
+  lang = lang === 'hi' ? 'hi' : 'en';
+  document.documentElement.lang = lang;
+
+  // Elements with explicit bilingual content.
+  document.querySelectorAll('[data-en][data-hi]').forEach(el => {
+    el.textContent = lang === 'hi' ? el.getAttribute('data-hi') : el.getAttribute('data-en');
+  });
+
+  // All other visible text nodes use the translation dictionary.
+  getTextNodes().forEach(node => {
+    if (!originalTexts.has(node)) originalTexts.set(node, node.nodeValue);
+    const original = originalTexts.get(node);
+    const key = original.replace(/\s+/g, ' ').trim();
+    if (lang === 'hi' && pageTranslations[key]) {
+      const lead = (original.match(/^\s*/) || [''])[0];
+      const trail = (original.match(/\s*$/) || [''])[0];
+      node.nodeValue = lead + pageTranslations[key] + trail;
+    } else if (lang === 'en') {
+      node.nodeValue = original;
+    }
+  });
+
+  // Form placeholders.
+  document.querySelectorAll('[data-en-placeholder][data-hi-placeholder]').forEach(el => {
+    el.placeholder = lang === 'hi'
+      ? el.getAttribute('data-hi-placeholder')
+      : el.getAttribute('data-en-placeholder');
+  });
+
+  document.querySelectorAll('[placeholder]').forEach(el => {
+    if (!el.dataset.enPlaceholder) el.dataset.enPlaceholder = el.getAttribute('placeholder');
+    const en = el.dataset.enPlaceholder;
+    const ph = {
+      'Your Name': 'आपका नाम',
+      'Enter your name': 'अपना नाम दर्ज करें',
+      'Phone Number': 'फोन नंबर',
+      'Enter your phone number': 'अपना फोन नंबर दर्ज करें',
+      'Your Message': 'आपका संदेश',
+      'Tell us what you need...': 'हमें बताएं कि आपको क्या चाहिए...'
+    };
+    el.placeholder = lang === 'hi' ? (ph[en] || en) : en;
+  });
+
+  document.title = lang === 'hi'
+    ? 'अथर्व एंटरप्राइजेज | कृषि एवं सिंचाई समाधान'
+    : 'Atharv Enterprises | Agriculture & Irrigation Solutions';
+
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.content = lang === 'hi'
+    ? 'अथर्व एंटरप्राइजेज - सिंचाई उत्पाद, कृषि मार्गदर्शन और अनुबंध खेती समाधान।'
+    : 'Atharv Enterprises - Irrigation products, farming advice and contract farming solutions.';
+
+  document.getElementById('lang-en')?.classList.toggle('active', lang === 'en');
+  document.getElementById('lang-hi')?.classList.toggle('active', lang === 'hi');
+  localStorage.setItem('atharv-language', lang);
+}
+
+window.setLanguage = setLanguage;
+
+document.addEventListener('DOMContentLoaded', () => {
+  getTextNodes().forEach(node => originalTexts.set(node, node.nodeValue));
+  setLanguage(localStorage.getItem('atharv-language') || 'en');
+});
+</script>
+
+<div class="enquiry-delivery-note">
+  <strong>Enquiries:</strong> Submitted enquiries will be sent to
+  <a href="mailto:atharventerprises222@gmail.com">atharventerprises222@gmail.com</a>.
+</div>
+<script>
+  // Client-side check before sending the enquiry to FormSubmit.
+  document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      const phone = form.querySelector('[name="phone"]');
+      const message = form.querySelector('[name="message"]');
+      const status = form.querySelector('#formMessage');
+      const digits = phone.value.replace(/\D/g, '');
+
+      if (digits.length < 7 || digits.length > 15) {
+        e.preventDefault();
+        status.textContent = 'Please enter a valid phone number.';
+        phone.focus();
+        return;
+      }
+
+      if (message.value.trim().length < 5) {
+        e.preventDefault();
+        status.textContent = 'Please enter a little more detail in your message.';
+        message.focus();
+        return;
+      }
+
+      status.textContent = 'Sending your enquiry...';
+    });
+  });
+</script>
+</body>
+</html>
